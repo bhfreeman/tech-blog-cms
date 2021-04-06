@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Post 1",
+        "post_text": "this is the first post of the site",
+        "user_id": 1
+    },
+    {
+        "title": "Post 2",
+        "post_text": "this is the second post of the site",
+        "user_id": 2
+    },
+    {
+        "title": "Post 3",
+        "post_text": "this is the third post of the site",
+        "user_id": 3
+    }
+]

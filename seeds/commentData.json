@@ -1,0 +1,18 @@
+[
+    {
+        "text": "this is the text of the first comment",
+        "post_id": 1,
+        "user_id": 1
+    },
+    {
+        "text": "this is the text of the second comment",
+        "post_id": 2,
+        "user_id": 2
+    },
+    {
+        "text": "this is the text of the third comment",
+        "post_id": 3,
+        "user_id": 3
+    }
+    
+]

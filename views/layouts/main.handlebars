@@ -13,16 +13,24 @@
     <nav>
       <a href="/">Home</a>
       <a href="/dash">Dashboard</a>
+      {{#if loggedIn}}
+      <button id="logout">Logout</button>
+      {{else}}
       <a href="/login">Login</a>
-      <a href="/logout">Logout</a>
+      {{/if}}
     </nav>
   </header>
-  <main class="">
+  <main class="container">
+    <div class="row">
     {{{ body }}}
+    </div>
   </main>
   <footer>
       
   </footer>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
