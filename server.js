@@ -38,6 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 // Starting up server and syncing database
-sequelize.sync({ alter: true }).then(() => {
+sequelize.sync().then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
