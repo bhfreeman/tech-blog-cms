@@ -9,16 +9,23 @@
 </head>
 
 <body>
-  <header class="">
-    <nav>
-      <a href="/">Home</a>
-      <a href="/dash">Dashboard</a>
-      {{#if loggedIn}}
-      <button id="logout">Logout</button>
+  <header class="container mx-0 mb-5">
+    <nav class="row">
+      <div class="col-12">
+      <a href="/" class="fs-3">Home</a>
+      <a href="/dash" class="fs-3">Dashboard</a>
+      {{#if logged_in}}
+      <button id="logout" class="fs-3">Logout</button>
       {{else}}
-      <a href="/login">Login</a>
+      <a href="/login" class="fs-3">Login</a>
       {{/if}}
+      </div>
     </nav>
+    <div class="row justify-content-start">
+      <div class="col-4">
+      <span class="badge bg-info fs-1">The Tech Blog</span>
+      </div>
+    </div>
   </header>
   <main class="container">
     <div class="row">
@@ -28,7 +35,7 @@
   <footer>
       
   </footer>
-  {{#if loggedIn}}
+  {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 
 router.get('/', async (req, res) => {
   try{
@@ -8,12 +8,17 @@ router.get('/', async (req, res) => {
         {
           model: User,
           attributes: ['name', 'id']
+        },
+        {
+          model: Comment
         }
       ]
     })
     const posts = postData.map((post) => post.get({plain: true}))
     // console.log(posts)
-    res.render('homepage', { posts });
+    res.render('homepage', { 
+    posts,
+    logged_in: req.session.logged_in });
   }catch(err){
     console.log(err);
     res.status(500).json(err);
@@ -21,7 +26,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
@@ -57,6 +62,16 @@ router.post('/login', async (req, res) => {
 
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
   }
 });
 

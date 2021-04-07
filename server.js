@@ -21,6 +21,8 @@ const sess = {
   })
 };
 
+app.use(session(sess));
+
 // Create the Handlebars.js engine object with custom helper functions
 const hbs = exphbs.create({ helpers });
 
@@ -29,7 +31,6 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // Setting up Middleware
-app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
