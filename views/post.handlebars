@@ -7,8 +7,12 @@
             {{ post.post_text }}
         </p>
         <p class="card-text">
+            <div>
             User: {{ post.user.name }}
-            {{format_date post.createdAt}}
+            </div>
+            <div>
+            Date Created: {{format_date post.createdAt}}
+            </div>
         </p>
         <button class="btn btn-dark" id="newCommentBtn">Add Comment</button>
         <div class="form p-3 m-1" style="display: none;" id="commentForm">
@@ -17,11 +21,12 @@
         </div>
     </div>
     {{#each post.comments}}
-    <div class="card text-center">
-            <div class="card-header">Comment</div>
+    <div class="card text-center ">
+            <div class="card-header bg-dark text-white">Comment</div>
         <div class="card-body">
             <div class="card-text">{{text}}</div>
             <div class="card-text">User: {{user.name}}</div>
+            <div class="card-text">Date Created: {{format_date createdAt}}</div>
         </div>
     </div>
     {{/each}}
