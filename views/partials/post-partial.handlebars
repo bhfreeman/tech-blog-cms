@@ -1,8 +1,25 @@
-<div class="row col-12 text-center border border-dark m-0">
+{{!-- <div class="row col-12 text-center border border-dark m-0">
     <div class="col-12 row border border-dark m-0 justify-content-start"></div>
-        <h3 class="col-4 fs-6 w-25"> {{format_date createdAt}}</h3>
-        <a href="/user/{{user.id}}" class="col-4 fs-4" >User: {{user.name }}</a>
+    <h3 class="col-4 fs-6 w-25"> {{format_date createdAt}}</h3>
+    <a href="/user/{{user.id}}" class="col-4 fs-4">User: {{user.name }}</a>
+</div>
+<h1>{{ title }}</h1>
+<p> {{ post_text }}</p>
+</div> --}}
+
+<div class="card text-center m-3 p-0">
+    <div class="card-header bg-dark text-white mb-1">
+        <a href="user/post/{{ id }}">
+        <h3> {{title}}</h3>
+        </a>
     </div>
-    <h1>{{ title }}</h1>
-    <p> {{ post_text }}</p>
+    <div class="card-body">
+        <p class="card-text">
+            {{ post_text }}
+        </p>
+        <p class="card-text">
+            <a href="/user/{{user.id}}" class="col-4 fs-4">User: {{user.name }}</a>
+            {{format_date createdAt}}
+        </p>
+    </div>
 </div>
